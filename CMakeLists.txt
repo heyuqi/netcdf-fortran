@@ -701,6 +701,11 @@ IF(ENABLE_TESTS)
 ENDIF()
 
 # Build the Fortran examples
-ADD_SUBDIRECTORY(examples)
+# Toggle whether or not to build examples.
+OPTION(ENABLE_EXAMPLES "Enable Fortran examples." ON)
+IF(ENABLE_EXAMPLES)
+  ADD_SUBDIRECTORY(examples)
+ENDIF()
+
 ADD_SUBDIRECTORY(docs)
 print_conf_summary()
